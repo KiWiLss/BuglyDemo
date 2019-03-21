@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+android:background="@color/white">
+
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+        <TextView android:layout_width="match_parent" android:layout_height="@dimen/m312"
+        android:background="#ff0000"/>
+
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="¥ 299.00"
+        android:textSize="@dimen/m18"
+        android:textColor="#ff0000"
+        android:layout_marginTop="@dimen/m14"
+        android:layout_marginLeft="@dimen/m14"
+        />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="Kenneth Cole制造商男士清凉透气超轻透气休闲
+鞋男式简约光面商务正装鞋"
+        android:textSize="@dimen/m16"
+        android:textColor="@color/black2D"
+        android:layout_marginLeft="@dimen/m14"
+        android:layout_marginTop="@dimen/m8"/>
+
+
+    <View
+            android:layout_width="match_parent"
+          android:layout_height="@dimen/m10"
+    android:background="@color/grayF8"
+    android:layout_marginTop="@dimen/m12"/>
+
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                        android:layout_height="@dimen/m44">
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+            android:text="规格"
+            android:textSize="@dimen/m13"
+            android:textColor="@color/gray94"
+            android:layout_marginLeft="@dimen/m14"
+            android:layout_centerVertical="true"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+            android:text="黑色牛皮，42码，1件"
+            android:textSize="@dimen/m14"
+            android:textColor="@color/black2D"
+            android:layout_marginLeft="@dimen/m56"
+            android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+
+
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/m10"
+                android:background="@color/grayF8"
+                />
+
+
+        <RelativeLayout android:layout_width="match_parent"
+                        android:layout_height="@dimen/m44">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="规格"
+                      android:textSize="@dimen/m13"
+                      android:textColor="@color/gray94"
+                      android:layout_marginLeft="@dimen/m14"
+                      android:layout_centerVertical="true"/>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="黑色牛皮，42码，1件"
+                      android:textSize="@dimen/m14"
+                      android:textColor="@color/black2D"
+                      android:layout_marginLeft="@dimen/m56"
+                      android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+
+        <View android:layout_width="match_parent" android:layout_height="@dimen/m1"
+        android:background="@color/grayF8"/>
+
+        <RelativeLayout android:layout_width="match_parent"
+                        android:layout_height="@dimen/m44">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="规格"
+                      android:textSize="@dimen/m13"
+                      android:textColor="@color/gray94"
+                      android:layout_marginLeft="@dimen/m14"
+                      android:layout_centerVertical="true"/>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="黑色牛皮，42码，1件"
+                      android:textSize="@dimen/m14"
+                      android:textColor="@color/black2D"
+                      android:layout_marginLeft="@dimen/m56"
+                      android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+
+
+        <TextView android:layout_width="match_parent" android:layout_height="@dimen/m37"
+        android:text="上拉查看图片详情"
+        android:textSize="@dimen/m13"
+        android:textColor="#acacac"
+        android:gravity="center"
+        android:background="@color/grayF8"/>
+
+
+        <TextView android:layout_width="match_parent" android:layout_height="@dimen/m150"
+        android:background="#00ff00"/>
+
+        <TextView android:layout_width="match_parent" android:layout_height="@dimen/m150"
+                  android:background="#00ffff"/>
+
+        <TextView android:layout_width="match_parent" android:layout_height="@dimen/m150"
+                  android:background="#ffff00"/>
+    </LinearLayout>
+
+
+
+
+
+</ScrollView>

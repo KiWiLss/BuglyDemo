@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4d000000">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_centerInParent="true">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom"
+                android:background="#fff"
+                />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/update"
+                android:scaleType="fitXY"
+                />
+
+        </FrameLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_update"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="升级信息"
+                android:layout_marginTop="20dp"
+                android:textSize="13sp"
+                android:textColor="#2D2D2C"
+                android:textStyle="bold"
+                android:layout_marginLeft="30dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="升级信息"
+                android:layout_marginTop="4dp"
+                android:tag="beta_upgrade_feature"
+                android:textSize="13sp"
+                android:textColor="#2D2D2C"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                />
+
+
+<!--按钮-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="19dp"
+                android:layout_marginRight="19dp">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_stroke_gray"
+                    android:text="残忍拒绝"
+                    android:gravity="center"
+                    android:textColor="#acacac"
+                    android:textSize="14sp"
+                    android:tag="beta_cancel_button"
+                    android:layout_marginRight="8dp"/>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_update_gradient"
+                    android:text="极速更新"
+                    android:gravity="center"
+                    android:textColor="#fff"
+                    android:textSize="14sp"
+                    android:tag="beta_confirm_button"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:layout_marginTop="20dp"
+            android:tag="beta_title"
+            android:textColor="#000"
+            android:visibility="gone"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="升级信息"
+            android:layout_marginTop="20dp"
+            android:tag="beta_upgrade_info"
+            android:visibility="gone"
+            />
+    </LinearLayout>
+</RelativeLayout>

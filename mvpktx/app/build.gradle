@@ -1,0 +1,163 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+// 添加插件
+apply plugin: 'com.mob.sdk'
+
+
+
+android {
+    // 在MobSDK的扩展中注册UMSSDK的相关信息
+    // 在MobSDK的扩展中注册UMSSDK的相关信息
+    //apply plugin: 'com.google.gms.google-services'
+    MobSDK {
+        appKey "2a71711b0a93c"
+        appSecret "25953b8148f2ac2aedf0f1b6255475e9"
+
+        MobIM {}
+
+        UMSSDK {}
+
+        MobPush {
+
+            devInfo {
+                HUAWEI{
+                    appId "华为的appId"
+                }
+                MEIZU{
+                    appId "魅族的appId"
+                    appKey "魅族的appKey"
+                }
+                XIAOMI{
+                    appId "小米的appId"
+                    appKey "小米的appKey"
+                }
+                FCM{
+                    //设置默认推送通知显示图标
+                    iconRes "@mipmap/ic_launcher"
+                }
+                //此处OPPO的配置信息只是用来展示配置示例，不能用了测试OPPO通道推送，如需推送请替换成自己的正确应用信息
+                OPPO{
+                    appKey "OPPO的appKey"
+                    appSecret "OPPO的appSecret"
+                }
+            }
+
+        }
+
+        // UMSSDK依赖于ShareSDK和SMSSDK，故还需要引入这两个SDK
+        ShareSDK {
+            gui false
+            devInfo {
+//                SinaWeibo {
+//                    appKey "568898243"
+//                    appSecret "38a4f8204cc784f81f9f0daaf31e02e3"
+//                    callbackUri "http://www.sharesdk.cn"
+//                    shareByAppClient false
+//                }
+                Wechat {
+                    appId "wx811b6128db53ae83"
+                    appSecret "864d97c25eeea60992419f979229c6d5"
+                }
+                QQ {
+                    appId "100371282"
+                    appKey "aed9b0303e3ed1e27bae87c33761161d"
+                }
+            }
+        }
+        SMSSDK {
+            gui false
+        }
+    }
+
+
+
+
+    signingConfigs {
+        release {
+            keyAlias 'kiwi'
+            keyPassword '104915'
+            storeFile file('/Users/kiwilss/Desktop/tools/studioTools/key/KiwiKey.jks')
+            storePassword '104915'
+        }
+    }
+
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.kiwilss.mvpktx"
+        minSdkVersion 17
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+    implementation 'jp.wasabeef:glide-transformations:3.3.0'
+    //常用工具集
+    implementation 'com.blankj:utilcode:1.23.6'
+    //json解析
+    implementation 'com.alibaba:fastjson:1.2.44'
+    //状态栏
+    implementation 'com.gyf.barlibrary:barlibrary:2.3.0'
+    //banner
+    implementation 'com.youth.banner:banner:1.4.10'
+    //supertextview
+    implementation 'com.github.chenBingX:SuperTextView:v3.0.0'
+    //圆形图片
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+    //design
+    implementation 'com.android.support:design:28.0.0'
+    //webviw
+    implementation 'com.just.agentweb:agentweb:4.0.2'
+    //baseadapter
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.40'
+    //Android ktx
+    implementation 'com.lxj:androidktx:1.0.15'
+    //moshi
+    implementation 'com.squareup.moshi:moshi:1.8.0'
+    //开启协程
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.1'
+    //toast,topbar,snackbar
+    implementation 'com.github.the-pig-of-jungle.smart-show:toast:2.6.3'
+    implementation('com.github.the-pig-of-jungle.smart-show:topbar:2.6.3') {
+        exclude group: 'com.android.support'
+    }
+    implementation('com.github.the-pig-of-jungle.smart-show:snackbar:2.6.3') {
+        exclude group: 'com.android.support'
+    }
+    // smart dialog
+    implementation 'com.github.the-pig-of-jungle.smart-show:dialog:2.6.3'
+    //权限
+    implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
+    //rx
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.2'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    implementation 'io.reactivex.rxjava2:rxkotlin:2.3.0'
+
+    implementation 'com.android.support:multidex:1.0.3'
+}

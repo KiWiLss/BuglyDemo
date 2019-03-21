@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MVPKTX</string>
+    <string name="title">标题</string>
+    <string name="testLogin">测试登录</string>
+</resources>
