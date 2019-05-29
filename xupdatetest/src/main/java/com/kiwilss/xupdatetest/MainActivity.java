@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
     }
 
     public void defaultFun(View view) {//只使用下载模式,默认界面进度条下载

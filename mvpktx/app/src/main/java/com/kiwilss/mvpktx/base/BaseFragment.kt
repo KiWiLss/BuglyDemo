@@ -15,6 +15,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.kingja.loadsir.core.LoadSir
 
 /**
  *@FileName: BaseFragment
@@ -36,13 +37,27 @@ abstract class BaseFragment<T: BasePresenter>: Fragment(){
 
     abstract fun initPresenter(): T?
 
+    var mRootView: View? = null
+
+    val mLoadSir by lazy {
+        LoadSir.getDefault().register(mRootView){ view ->
+            //onReload
+            initDataAgain()
+        }
+    }
+
+    open fun initDataAgain() {//首次加载失败，再次加载数据时
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-        val view = inflater.inflate(getLayoutId(),container,false)
+        if (mRootView == null){
+            mRootView = inflater.inflate(getLayoutId(),container,false)
+        }
 
         mPresenter?.attech(context)
 
-        return view
+        return mRootView
     }
 
     abstract fun getLayoutId(): Int

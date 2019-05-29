@@ -17,8 +17,11 @@ import android.support.multidex.MultiDex
 import com.blankj.utilcode.util.LogUtils
 import com.blankj.utilcode.util.Utils
 import com.coder.zzq.smartshow.core.SmartShow
+import com.kingja.loadsir.core.LoadSir
+import com.kiwilss.wanandroid.callback.*
 import com.lxj.androidktx.AndroidKtxConfig
 import com.mob.MobSDK
+import com.squareup.leakcanary.LeakCanary
 
 /**
  *@FileName: MyApp
@@ -57,5 +60,24 @@ class MyApp: Application(){
         MobSDK.init(this)
 
         MultiDex.install(this)
+
+        //全局loading设置
+        LoadSir.beginBuilder()
+            .addCallback(ErrorCallback())
+            .addCallback(EmptyCallback())
+            .addCallback(LoadingCallback())
+            .addCallback(TimeOutCallback())
+            .addCallback(CustomCallback())
+            //.setDefaultCallback(LoadingCallback.class)//设置了默认每个界面初始都会出现
+            .commit()
+
+        //初始化内存检测
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            // This process is dedicated to LeakCanary for heap analysis.
+            // You should not init your app in this process.
+            return
+        }
+        LeakCanary.install(this)
+
     }
 }

@@ -2,4 +2,9 @@
     <string name="app_name">MVPKTX</string>
     <string name="title">标题</string>
     <string name="testLogin">测试登录</string>
+
+    <string name="fine_no_data">fine, no data.</string>
+    <string name="click_me_to_retry">click me to retry!</string>
+
+
 </resources>

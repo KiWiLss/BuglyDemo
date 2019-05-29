@@ -12,8 +12,10 @@
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
-            android:theme="@style/AppTheme" tools:ignore="GoogleAppIndexingWarning"
+            android:theme="@style/AppTheme"
+            tools:ignore="GoogleAppIndexingWarning"
             tools:replace="android:name">
+
         <activity android:name=".MainActivity"
                   android:launchMode="singleTask"
                   >
@@ -23,6 +25,10 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <activity android:name=".wm.WmLoginActivity" android:label="微忙登录测试" android:screenOrientation="portrait"/>
+
+
 
         <activity android:name=".test.login.TestLoginActivity" android:label="@string/testLogin"
                   android:screenOrientation="portrait"/>
@@ -39,6 +45,13 @@
 
         <activity android:name=".im.home.IMHomeActivity" android:label="首页"
                   android:screenOrientation="portrait"/>
+
+        <activity android:name=".test.home.HomeActivity" android:label="首页测试"
+                  android:screenOrientation="portrait"/>
+
+        <activity android:name=".test.fragment.LoadingActivity" android:label="测试fg"
+                  android:screenOrientation="portrait"/>
+
 
     </application>
 

@@ -41,6 +41,7 @@ class TestPresenter: BasePresenter(){
                             "deviceType" to "ANDROID")
                             .http().get<BaseBean<LoginIn>>().await()
                         ToastUtils.handlerResult(result,"login")
+
                     }
 
     }

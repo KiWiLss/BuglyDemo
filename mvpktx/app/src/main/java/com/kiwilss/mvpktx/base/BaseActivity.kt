@@ -18,6 +18,7 @@ import com.blankj.utilcode.util.AdaptScreenUtils
 import com.coder.zzq.smartshow.dialog.SmartDialog
 import com.coder.zzq.smartshow.dialog.creator.type.impl.DialogCreatorFactory
 import com.gyf.barlibrary.ImmersionBar
+import com.kingja.loadsir.core.LoadSir
 import com.kiwilss.kotlinmvp.manager.ActivityCollector
 import com.kiwilss.mvpktx.R
 import com.lxj.androidktx.bus.LiveDataBus
@@ -38,6 +39,16 @@ abstract class BaseActivity<T: BasePresenter>: AppCompatActivity(){
     }
 
     abstract fun initPresenter(): T?
+
+     val mLoadSir by lazy {
+        LoadSir.getDefault().register(this){ view ->
+            //onReload
+            initDataAgain()
+        }
+    }
+
+     open fun initDataAgain() {//首次加载失败，再次加载数据时
+         }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -68,6 +79,7 @@ abstract class BaseActivity<T: BasePresenter>: AppCompatActivity(){
             it?.run {
                 toast(it)
                 dismissLoadingDiloag()
+                //PostUtil.postCallbackDelayed(mLoadSir, ErrorCallback::class.java)
             }
         })
     }

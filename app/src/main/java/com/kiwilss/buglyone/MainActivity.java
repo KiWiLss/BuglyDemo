@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.kiwilss.buglyone.utils.OpenAutoStartUtil;
 import com.kiwilss.buglyone.utils.SystemUtil;
@@ -35,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.ivphoto = (ImageView) findViewById(R.id.iv_photo);
+
+
+        TextView tvVersion = findViewById(R.id.tv_main_version);
+        tvVersion.setText(BuildConfig.VERSION_NAME);
 
 
         //自定义对话框

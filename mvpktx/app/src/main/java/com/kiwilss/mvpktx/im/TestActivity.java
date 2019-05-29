@@ -3,6 +3,7 @@ package com.kiwilss.mvpktx.im;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+
 import com.mob.imsdk.MobIM;
 import com.mob.imsdk.MobIMCallback;
 import com.mob.imsdk.model.IMConversation;

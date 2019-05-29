@@ -6,6 +6,8 @@ import com.alibaba.fastjson.JSON
 import com.blankj.utilcode.util.LogUtils
 import com.coder.zzq.smartshow.toast.SmartToast
 import com.kiwilss.mvpktx.im.home.IMHomeActivity
+import com.kiwilss.mvpktx.test.fragment.LoadingActivity
+import com.kiwilss.mvpktx.wm.WmLoginActivity
 import com.lxj.androidktx.core.click
 import com.lxj.androidktx.core.mmkv
 import com.lxj.androidktx.core.startActivity
@@ -26,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         MobPush.setAlias("test1")//设置别名
         //MobPush.addTags(String[] tags);//设置标签
 
-        nextListener()
+        //nextListener()
 
 
         tv_main_hello.click {
@@ -35,21 +37,26 @@ class MainActivity : AppCompatActivity() {
             //UMSGUI.showRecommendationPage()
             //MobSDK.setUser("用户ID", "用户昵称","用户头像地址", null);
         }
-
+        btn_main_wmapi.click {
+            startActivity<WmLoginActivity>(bundle = arrayOf("a" to 1))
+        }
 
     }
 
     private fun nextListener() {
-        window.decorView.postDelayed({
-            //登录过直接进入
-            val isLogin = mmkv().getBoolean("isLogin", false)
-            if (isLogin){
-                startActivity<IMHomeActivity>()
-                finish()
-            }else{
-                goToLogin()
-            }
-        },2500)
+        startActivity<LoadingActivity>()
+
+
+//        window.decorView.postDelayed({
+//            //登录过直接进入
+//            val isLogin = mmkv().getBoolean("isLogin", false)
+//            if (isLogin){
+//                startActivity<IMHomeActivity>()
+//                finish()
+//            }else{
+//                goToLogin()
+//            }
+//        },2500)
     }
 
     private fun goToLogin() {

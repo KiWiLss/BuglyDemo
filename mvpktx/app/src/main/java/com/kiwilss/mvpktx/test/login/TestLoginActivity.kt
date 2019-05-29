@@ -13,7 +13,6 @@ package com.kiwilss.mvpktx.test.login
 import android.Manifest
 import android.arch.lifecycle.Observer
 import android.os.Bundle
-import com.blankj.utilcode.util.LogUtils
 import com.kiwilss.mvpktx.R
 import com.kiwilss.mvpktx.base.BaseActivity
 import com.kiwilss.mvpktx.utils.StringUtils
@@ -22,9 +21,6 @@ import com.lxj.androidktx.bus.LiveDataBus
 import com.lxj.androidktx.core.click
 import com.lxj.androidktx.core.isPhone
 import com.lxj.androidktx.core.toast
-import com.mob.imsdk.MobIM
-import com.mob.imsdk.MobIMCallback
-import com.mob.imsdk.model.IMConversation
 import com.tbruyelle.rxpermissions2.RxPermissions
 import kotlinx.android.synthetic.main.activity_test_login.*
 
@@ -67,6 +63,7 @@ class TestLoginActivity: BaseActivity<TestPresenter>() {
         //接收登录成功的结果
         LiveDataBus.with<LoginIn>("login").observe(this,observer = Observer {
             dismissLoadingDiloag()
+            //mLoadSir.showSuccess()
             toast("登录成功")
         })
 
@@ -85,7 +82,8 @@ class TestLoginActivity: BaseActivity<TestPresenter>() {
                             if (phone.isPhone()) {
                                 //验证密码
                                 if (pwd.hint2(StringUtils.HINT_PASSWORD)) {
-                                    showLoadingDiloag()
+                                    showLoadingDiloag("加载中...")
+                                    //mLoadSir.showCallback(LoadingCallback::class.java)
                                     mPresenter?.login(phone,pwd)
                                 }
                             }else{
